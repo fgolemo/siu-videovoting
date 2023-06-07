@@ -61,7 +61,7 @@ def login():
     try:
         conn, cur = get_db()
         cur.execute(
-            "select u.LOGIN, v.URL, r.VOTE, r.ID, t.TOPIC "
+            "select u.LOGIN, v.URL, r.VOTE, r.ID, t.ID, t.TOPIC "
             "from users u "
             "join reviews r on (u.ID = r.PERSON) "
             "join videos v on (r.VIDEO = v.ID) "
