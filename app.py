@@ -9,8 +9,6 @@ DATABASE_URL = os.environ["DATABASE_URL"]
 
 
 def get_db():
-    # very unsafe but cest la vie
-    # conn = psycopg2.connect(host="localhost", database="siuvotes2", user="florian", password="postgres")
     conn = psycopg2.connect(DATABASE_URL, sslmode="require")
     cur = conn.cursor()
     return conn, cur
